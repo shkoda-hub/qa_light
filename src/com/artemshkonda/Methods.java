@@ -29,15 +29,25 @@ public class Methods {
             return fac;
     }
 
-    public boolean Triangle (double a, double b, double c) {
-        if (a >= b + c || b >= a + c || c >= a + b||a<=0||b<=0||c<=0) {
-            System.out.println("Треугольник не существует");
-            return false;
+    public boolean triangle (double a, double b, double c) {
+        boolean t;
+        try {
+            if (a >= b + c || b >= a + c || c >= a + b||a<=0||b<=0||c<=0) {
+                System.out.println("Треугольник не существует");
+                t = false;
+            }
+            else {
+                System.out.println("Треугольник существует");
+                t = true;
+            }
+            System.out.println("Проверка возможности существования треугольника выполнена");
         }
-        else {
-            System.out.println("Треугольник не существует");
-            return true;
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Проверка не была выполнена");
+            t = false;
         }
+        return t;
     }
 // 4 задача
     public void Zero(int a){
@@ -200,7 +210,7 @@ public class Methods {
      */
     public double triangleSquare (double a, double b, double c){
         double s =-1;
-        if (Triangle(a,b,c)){
+        if (triangle(a,b,c)){
             double p;
             p = (a+b+c)/2;
             s = Math.sqrt(p*(p-a)*(p-b)*(p-c));

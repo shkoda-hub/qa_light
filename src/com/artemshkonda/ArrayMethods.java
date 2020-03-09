@@ -97,14 +97,8 @@ public class ArrayMethods {
      * @param arr
      */
     public boolean sort(int[] arr) {
-        boolean s = true;
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                s = false;
-                break;
-            }
-        }
-        return s;
+        return false;
+
     }
 
     /**
@@ -241,15 +235,14 @@ public class ArrayMethods {
      *
      * @param arr
      */
-    public int minI1 (int[] arr){
-        for (int i = 0; i<arr.length; i++){
-            if (arr[i]<=i){
-                System.out.print(arr[i]+" ");
+    public int minI1(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= i) {
+                System.out.print(arr[i] + " ");
             }
         }
         return -1;
     }
-
 
 
     /**
@@ -306,151 +299,153 @@ public class ArrayMethods {
      *
      * @param arr
      */
-    public int oneZero(int[] arr){
-       int idx = 0;
-       while (arr[idx]!=0){
-           System.out.print(arr[idx] + " ");
-           idx++;
-       }
-       return -1;
+    public int oneZero(int[] arr) {
+        int idx = 0;
+        while (arr[idx] != 0) {
+            System.out.print(arr[idx] + " ");
+            idx++;
+        }
+        return -1;
     }
 
 
-
-
-        /**
-         * 14. Дан массив чисел. Найти  mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]).
-         * @param arr
-         */
-    public int maxPlusMin(int[] arr){
+    /**
+     * 14. Дан массив чисел. Найти  mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]).
+     *
+     * @param arr
+     */
+    public int maxPlusMin(int[] arr) {
         int maxArr = arr[0];
         int minArr = arr[1];
-        for (int i = 2; i<arr.length; i+=2){
-            if(maxArr<arr[i]){
+        for (int i = 2; i < arr.length; i += 2) {
+            if (maxArr < arr[i]) {
                 maxArr = arr[i];
             }
         }
-        for (int i = 3; i<arr.length; i+=2){
-            if(minArr>arr[i]){
+        for (int i = 3; i < arr.length; i += 2) {
+            if (minArr > arr[i]) {
                 minArr = arr[i];
             }
         }
-        System.out.println(maxArr+minArr);
+        System.out.println(maxArr + minArr);
         return maxArr + minArr;
-
 
 
     }
 
 
-
-
-        /**
-         * 15. Дан массив целых положительных чисел. Найти произведение только тех чисел, которые больше
-         * заданного числа М. Если таких нет, то выдать сообщение об этом.
-         * @param arr
-         */
-        public int moreM ( int[] arr, int m){
-            int num = 1;
-            boolean isPresent = false;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > m) {
-                    num = arr[i] * num;
-                    isPresent = true;
-                }
+    /**
+     * 15. Дан массив целых положительных чисел. Найти произведение только тех чисел, которые больше
+     * заданного числа М. Если таких нет, то выдать сообщение об этом.
+     *
+     * @param arr
+     */
+    public int moreM(int[] arr, int m) {
+        int num = 1;
+        boolean isPresent = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > m) {
+                num = arr[i] * num;
+                isPresent = true;
             }
-            if (isPresent) {
-                System.out.println(num);
-            } else {
-                System.out.println("В массиве нет значений, которые больше " + m);
-            }
-            return num;
         }
-
-        /**
-         * 16. Дан массив положительных и отрицательных чисел.  Заменить нулями те числа, величина которых
-         * по модулю больше максимального числа (|a[i]|>max{ a[0], a[1], ..., a[n]})
-         * @param arr
-         */
-        public int[] moduleArr ( int[] arr){
-            for (int i = 0; i < arr.length; i++) {
-                if (Math.abs(arr[i]) > max(arr)) {
-                    arr[i] = 0;
-                }
-            }
-            System.out.println(Arrays.toString(arr));
-            return arr;
+        if (isPresent) {
+            System.out.println(num);
+        } else {
+            System.out.println("В массиве нет значений, которые больше " + m);
         }
+        return num;
+    }
 
-        /**
-         * 17. Дан массив чисел с положительными и отрицательными элементы. Вычислить произведение
-         * отрицательных элементов P 1  и произведение положительных элементов Р 2 . Сравнить модуль Р 2  с
-         * модулем Р 1  и указать, какое из произведений по модулю больше.
-         * @param arr
-         */
-        public int compare ( int[] arr){
-            int p1 = 1;
-            int p2 = 1;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] < 0) {
-                    p1 = arr[i] * p1;
-                } else if (arr[i] > 0) {
-                    p2 = arr[i] * p2;
-                }
+    /**
+     * 16. Дан массив положительных и отрицательных чисел.  Заменить нулями те числа, величина которых
+     * по модулю больше максимального числа (|a[i]|>max{ a[0], a[1], ..., a[n]})
+     *
+     * @param arr
+     */
+    public int[] moduleArr(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (Math.abs(arr[i]) > max(arr)) {
+                arr[i] = 0;
             }
-            if (Math.abs(p1) > Math.abs(p2)) {
-                System.out.println("Значение p1 больше чем p2 и равно " + Math.abs(p1));
-            } else {
-                System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
-            }
-            return -1;
         }
+        System.out.println(Arrays.toString(arr));
+        return arr;
+    }
 
-        /**
-         * 18. Дан массив чисел. Среди них есть равные. Найти первый максимальный элемент массива и
-         * заменить его нулем.
-         * @param arr
-         * @return
-         */
-        public int[] change ( int[] arr){
-            int changeI = arr[0];
-            int idx = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] > changeI) {
-                    changeI = arr[i];
-                    idx = i;
-                }
+    /**
+     * 17. Дан массив чисел с положительными и отрицательными элементы. Вычислить произведение
+     * отрицательных элементов P 1  и произведение положительных элементов Р 2 . Сравнить модуль Р 2  с
+     * модулем Р 1  и указать, какое из произведений по модулю больше.
+     *
+     * @param arr
+     */
+    public int compare(int[] arr) {
+        int p1 = 1;
+        int p2 = 1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                p1 = arr[i] * p1;
+            } else if (arr[i] > 0) {
+                p2 = arr[i] * p2;
             }
-            arr[idx] = 0;
-            System.out.println(Arrays.toString(arr));
-            return arr;
         }
-
-        /**
-         * 19. Дан массив чисел. Образовать новый массив, элементами которого будут элементы исходного,
-         * оканчивающиеся на цифру k.
-         * @return
-         */
-        public int[] numbersK ( int[] arr, int k){
-            int count = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 10 == k) {
-                    count++;
-                }
-            }
-            int[] newArr = new int[count];
-            int j = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 10 == k) {
-                    newArr[j] = arr[i];
-                    j++;
-                }
-            }
-            System.out.println(Arrays.toString(newArr));
-            return newArr;
-
+        if (Math.abs(p1) > Math.abs(p2)) {
+            System.out.println("Значение p1 больше чем p2 и равно " + Math.abs(p1));
+        } else {
+            System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
         }
+        return -1;
+    }
+
+    /**
+     * 18. Дан массив чисел. Среди них есть равные. Найти первый максимальный элемент массива и
+     * заменить его нулем.
+     *
+     * @param arr
+     * @return
+     */
+    public int[] change(int[] arr) {
+        int changeI = arr[0];
+        int idx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > changeI) {
+                changeI = arr[i];
+                idx = i;
+            }
+        }
+        arr[idx] = 0;
+        System.out.println(Arrays.toString(arr));
+        return arr;
+    }
+
+    /**
+     * 19. Дан массив чисел. Образовать новый массив, элементами которого будут элементы исходного,
+     * оканчивающиеся на цифру k.
+     *
+     * @return
+     */
+    public int[] numbersK(int[] arr, int k) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 10 == k) {
+                count++;
+            }
+        }
+        int[] newArr = new int[count];
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 10 == k) {
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+        System.out.println(Arrays.toString(newArr));
+        return newArr;
+
+    }
 }
+
 
 
 
