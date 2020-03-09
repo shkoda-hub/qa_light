@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b866439-7006-4567-98bb-bfcf71f4eaa4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YCj8hsjjriqYhyFd1L3yycST2T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected="Application.MainClass">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="untitled1" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.artemshkonda.MainClass" />
+      <module name="untitled1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.artemshkonda.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainClass" />
+      <item itemvalue="Application.Main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b866439-7006-4567-98bb-bfcf71f4eaa4" name="Default Changelist" comment="" />
+      <created>1582453312556</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582453312556</updated>
+    </task>
+    <task id="LOCAL-00001" summary="1">
+      <created>1583222954158</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583222954159</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/newHomeWork" />
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/homeWork" />
+    </ignored-roots>
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="498" y="11" key="CommitChangelistDialog2" timestamp="1583222953468">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="398" y="9" key="CommitChangelistDialog2/0.0.1536.826@0.0.1536.826" timestamp="1583183601531" />
+    <state x="498" y="11" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583222953468" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583612566578">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.826@0.0.1536.826" timestamp="1583612566578" />
+    <state width="1492" height="184" key="GridCell.Tab.0.bottom" timestamp="1583779518255">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="184" key="GridCell.Tab.0.bottom/0.0.1536.826@0.0.1536.826" timestamp="1583779518255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583489629317" />
+    <state width="1492" height="184" key="GridCell.Tab.0.center" timestamp="1583779518255">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="184" key="GridCell.Tab.0.center/0.0.1536.826@0.0.1536.826" timestamp="1583779518255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583489629317" />
+    <state width="1492" height="184" key="GridCell.Tab.0.left" timestamp="1583779518254">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="184" key="GridCell.Tab.0.left/0.0.1536.826@0.0.1536.826" timestamp="1583779518254" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583489629316" />
+    <state width="1492" height="184" key="GridCell.Tab.0.right" timestamp="1583779518255">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="184" key="GridCell.Tab.0.right/0.0.1536.826@0.0.1536.826" timestamp="1583779518255" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583489629317" />
+    <state width="1492" height="256" key="GridCell.Tab.1.bottom" timestamp="1583777352190">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="256" key="GridCell.Tab.1.bottom/0.0.1536.826@0.0.1536.826" timestamp="1583777352190" />
+    <state width="1877" height="277" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583488641781" />
+    <state width="1492" height="256" key="GridCell.Tab.1.center" timestamp="1583777352189">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="256" key="GridCell.Tab.1.center/0.0.1536.826@0.0.1536.826" timestamp="1583777352189" />
+    <state width="1877" height="277" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583488641781" />
+    <state width="1492" height="256" key="GridCell.Tab.1.left" timestamp="1583777352189">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="256" key="GridCell.Tab.1.left/0.0.1536.826@0.0.1536.826" timestamp="1583777352189" />
+    <state width="1877" height="277" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583488641781" />
+    <state width="1492" height="256" key="GridCell.Tab.1.right" timestamp="1583777352189">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state width="1492" height="256" key="GridCell.Tab.1.right/0.0.1536.826@0.0.1536.826" timestamp="1583777352189" />
+    <state width="1877" height="277" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583488641781" />
+    <state x="277" y="44" key="SettingsEditor" timestamp="1583612585139">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="277" y="44" key="SettingsEditor/0.0.1536.826@0.0.1536.826" timestamp="1583612585139" />
+    <state x="346" y="55" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583221962644" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1583775356208">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.826@0.0.1536.826" timestamp="1583775356208" />
+    <state x="581" y="297" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583488665763" />
+    <state x="425" y="182" key="run.anything.popup" timestamp="1582921786481">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="425" y="182" key="run.anything.popup/0.0.1536.826@0.0.1536.826" timestamp="1582921786481" />
+    <state x="498" y="179" width="672" height="539" key="search.everywhere.popup" timestamp="1583674044100">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="498" y="179" width="672" height="539" key="search.everywhere.popup/0.0.1536.826@0.0.1536.826" timestamp="1583674044100" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583423463920" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="arr[1]" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
