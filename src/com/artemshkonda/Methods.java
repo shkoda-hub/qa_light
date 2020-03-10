@@ -2,6 +2,7 @@ package com.artemshkonda;
 
 import javax.xml.crypto.dsig.spec.HMACParameterSpec;
 import java.io.InputStream;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Methods {
@@ -13,8 +14,15 @@ public class Methods {
      */
     public int factorial(int n){
         int fac = 1;
-        for (int i = 1; i<=n; i++){
-            fac = fac*i;
+        try{
+            for (int i = 1; i<=n; i++){
+                fac = fac*i;
+            }
+            System.out.println("Фактриал числа был посчитан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("При расчете факториала произошла ошибка");
         }
         return fac;
     }
@@ -28,8 +36,17 @@ public class Methods {
      * @param y2
      * @return
      */
-    public static double getDistance(double x1, double y1, double x2, double y2){
-        return Math.sqrt(((x2-x1)*(x2-x1))+(y2-y1)*(y2-y1));
+    public double getDistance(double x1, double y1, double x2, double y2){
+        double l = 0;
+        try{
+            l = Math.sqrt(((x2-x1)*(x2-x1))+(y2-y1)*(y2-y1));
+            System.out.println("Расстояние между точками было посчитано");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при расчете расстояния между точками");
+        }
+        return l;
     }
 
     /**
@@ -55,8 +72,8 @@ public class Methods {
             }
             System.out.println("Проверка возможности существования треугольника выполнена");
         }
-        catch (Exception e){
-            e.printStackTrace();
+        catch (Exception ex){
+            ex.printStackTrace();
             System.out.println("Проверка не была выполнена");
             t = false;
         }
@@ -67,13 +84,22 @@ public class Methods {
      * 4 Почитать про вложенный цикл и вывести треугольник из нулей на экран
      * @param a
      */
-    public void printTriangle(int a){
-        for (int i=0; i<a; i++){
-            for (int j=0; j<=i; j++){
-                System.out.print("0 ");
+    public int printTriangle(int a){
+        try{
+            for (int i=0; i<a; i++){
+                for (int j=0; j<=i; j++){
+                    System.out.print("0 ");
+                }
+                System.out.println();
             }
-            System.out.println();
+            System.out.println("Треугольник из нулей выведен");
         }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Треугольник не был выведен");
+            return -1;
+        }
+        return 1;
     }
 
     /**
@@ -84,7 +110,16 @@ public class Methods {
      * @return
      */
     public double index (double m, double h){
-        return (m/(h*h));
+        double idx = 1;
+        try{
+            idx = (m/(h*h));
+            System.out.println("Индекс массы тела был посчитан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при расчете интедка массы тела");
+        }
+        return idx;
     }
 
     /**
@@ -102,16 +137,23 @@ public class Methods {
         int second = a/10%10;
         int third = a%10;
         boolean check = false;
-        if (a < 100 || a >= 1000) {
-            System.out.println("Число должно быть трехзначным");
+        try{
+            if (a < 100 || a >= 1000) {
+                System.out.println("Число должно быть трехзначным");
+            }
+            else if (first == second||first == third||second==third) {
+                check = true;
+                System.out.println("Среди указанного значения есть одинаковые цифры");
+            }
+            else {
+                check = false;
+                System.out.println("Среди указаного значения одинаковых цифр не найденно");
+            }
+            System.out.println("Проверка на одинаковые цифры прошла успешно");
         }
-        else if (first == second||first == third||second==third) {
-            check = true;
-            System.out.println("Среди указанного значения есть одинаковые цифры");
-        }
-        else {
-            check = false;
-            System.out.println("Среди указаного значения одинаковых цифр не найденно");
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Произошла ошибка при проверке на одинаковые цифры");
         }
         return check;
     }
@@ -126,8 +168,15 @@ public class Methods {
      * @return
      */
     public double poll (double l, double h, double m){
-        double v = l*h*m;
-        System.out.println("Для заполнения бассейна нужно "+v+" литров");
+        double v = 0;
+        try{
+            v = l*h*m;
+            System.out.println("Объем бассейна был посчитан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при расчете объема бассейна");
+        }
         return v;
     }
 
@@ -235,8 +284,19 @@ public class Methods {
      * @param a
      * @return
      */
-    public double sqrSixangles(double a){
-        return triangleSquare(a, a, a)*6;
+        public double sqrSixangles(double a){
+            double s = -1.0;
+            try{
+                s = triangleSquare(a, a, a)*6;
+                System.out.println("Площадь шестиугольника расчитана");
+                System.out.println(s);
+            }
+            catch (Exception ex){
+                ex.printStackTrace();
+                System.out.println("Ошибка при расчете шестиугольника");
+
+            }
+            return s;
     }
 
     /**
