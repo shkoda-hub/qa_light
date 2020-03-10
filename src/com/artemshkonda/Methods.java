@@ -6,6 +6,7 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class Methods {
+    ArrayMethods arrayMethods = new ArrayMethods();
 
     /**
      * 1 Написать метод возвращающий факториал заданного числа N
@@ -63,11 +64,9 @@ public class Methods {
         boolean t;
         try {
             if (a >= b + c || b >= a + c || c >= a + b||a<=0||b<=0||c<=0) {
-                System.out.println("Треугольник не существует");
                 t = false;
             }
             else {
-                System.out.println("Треугольник существует");
                 t = true;
             }
             System.out.println("Проверка возможности существования треугольника выполнена");
@@ -182,7 +181,7 @@ public class Methods {
 
 
     /**
-     * 8 При поступлении в вуз абитуриенты, получившие &quot;двойку&quot; на первом экзамене, ко второму не
+     * 8 При поступлении в вуз абитуриенты, получившие двойку на первом экзамене, ко второму не
      * допускаются. В массиве A[n] записаны оценки экзаменующихся, полученные на первом экзамене.
      * Подсчитать, сколько человек не допущено ко второму экзамену.
      * @param arr
@@ -190,17 +189,24 @@ public class Methods {
      */
     public int exam(int[] arr) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= 2) {
-                count++;
-            }
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] <= 2) {
+                    count++;
+                }
 
+            }
+            if (count == 0) {
+                System.out.println("Ко второму экзамену допущены все студенты");
+            }
+            else {
+                System.out.println("Ко второму экзамену не допущено " + count + " студентов");
+            }
+            System.out.println("Подсчет кол-ва студентов, которые не допущены ко второму экзамену завершен успешно");
         }
-        if (count == 0) {
-            System.out.println("Ко второму экзамену допущены все студенты");
-        }
-        else {
-            System.out.println("Ко второму экзамену не допущено " + count + " студентов");
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при подсчете кол-ва студентов, которые не допущены ко второму экзамену");
         }
         return count;
     }
@@ -215,10 +221,17 @@ public class Methods {
     public int bank(int[]arr){
         int imax = 0;
         int max = arr[0];
-        for (int i = 0; i<arr.length; i++){
-            if(arr[i]>max){
-                imax = i;
+        try{
+            for (int i = 0; i<arr.length; i++){
+                if(arr[i]>max){
+                    imax = i;
+                }
             }
+            System.out.println("Определение банка с выгодным курсом прошло успешно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при определении банка с выгодным курсом");
         }
         System.out.println("Вам выгодно обменять доллары на рубли в банке под номером "+imax);
         return imax;
@@ -227,14 +240,24 @@ public class Methods {
     /**
      * 10. Вывести на экран строку S указанное количество раз N
      * @param a
-     * @param b
+     * @param n
      */
-    public int printStr (String a, int b){
-        for (int i = 0; i<b; i++)
-        {
-            System.out.println(a);
+    public boolean printStr (String a, int n){
+        boolean r;
+        try{
+            for (int i = 0; i<n; i++)
+            {
+                System.out.println(a);
+            }
+            System.out.println("Строку было выведенно "+n+" раз");
+            r = true;
         }
-        return -1;
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при выводе строки");
+            r = false;
+        }
+        return r;
     }
 
     /**
@@ -243,18 +266,16 @@ public class Methods {
      * @return
      */
     public int maxMin (int[] arr){
-        int max = arr[0];
-        int min = arr[0];
-        for (int i = 0; i<arr.length; i++){
-            if (arr[i]<min){
-                min = arr[i];
+        int res = 0;
+        try{
+            res = arrayMethods.max(arr)+arrayMethods.min(arr);
+            System.out.println("Сумма большего и меньшего значения масива была посчитана");
             }
-            else if (arr[i]>max){
-                max = arr[i];
-            }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при нахождении суммы большего и меньшего значения масива");
         }
-        System.out.println(max+min);
-        return (max+min);
+        return res;
     }
 
     /**
@@ -266,13 +287,20 @@ public class Methods {
      */
     public double triangleSquare (double a, double b, double c){
         double s =-1;
-        if (triangle(a,b,c)){
-            double p;
-            p = (a+b+c)/2;
-            s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+        try{
+            if (triangle(a,b,c)){
+                double p;
+                p = (a+b+c)/2;
+                s = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            }
+            else {
+                System.out.println("Треугольник не существует");
+            }
+            System.out.println("Метод расчета площади треугольника был выполнен");
         }
-        else {
-            System.out.println("Треугольник не существует");
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при вычислении плащади треугольника");
         }
         return s;
     }

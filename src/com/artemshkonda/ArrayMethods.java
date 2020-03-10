@@ -214,6 +214,7 @@ public class ArrayMethods {
                 min = arr[i];
             }
         }
+        System.out.println(min);
         return min;
     }
 
