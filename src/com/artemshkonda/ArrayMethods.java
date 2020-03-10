@@ -97,8 +97,12 @@ public class ArrayMethods {
      * @param arr
      */
     public boolean sort(int[] arr) {
-        return false;
-
+         int i = 1;
+         while(i<arr.length && arr[i]>=arr[i-1]){
+             i++;
+         }
+         System.out.println(i == arr.length);
+         return i == arr.length;
     }
 
     /**
@@ -301,7 +305,7 @@ public class ArrayMethods {
      */
     public int oneZero(int[] arr) {
         int idx = 0;
-        while (arr[idx] != 0) {
+        while (idx<arr.length && arr[idx] != 0) {
             System.out.print(arr[idx] + " ");
             idx++;
         }
@@ -403,20 +407,20 @@ public class ArrayMethods {
      * заменить его нулем.
      *
      * @param arr
-     * @return
+                * @return
      */
-    public int[] change(int[] arr) {
-        int changeI = arr[0];
-        int idx = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > changeI) {
-                changeI = arr[i];
-                idx = i;
+        public int[] change(int[] arr) {
+            int changeI = arr[0];
+            int idx = 0;
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] > changeI) {
+                    changeI = arr[i];
+                    idx = i;
+                }
             }
-        }
-        arr[idx] = 0;
-        System.out.println(Arrays.toString(arr));
-        return arr;
+            arr[idx] = 0;
+            System.out.println(Arrays.toString(arr));
+            return arr;
     }
 
     /**

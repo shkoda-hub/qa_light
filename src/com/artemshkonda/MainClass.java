@@ -7,8 +7,8 @@ public class MainClass {
         Methods methods = new Methods();
         ArrayMethods arrayMethods = new ArrayMethods();
 
-        int[] arr1 = {1, 2, 3, 2, 4, 5, 6, 2};
-        methods.triangle(2, 6, 5);
+        int[] arr1 = {1000, 1000, 2, 1000, 100, 5, 6, 0};
+        methods.number();
 
 
 
