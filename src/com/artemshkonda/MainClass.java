@@ -8,7 +8,7 @@ public class MainClass {
         ArrayMethods arrayMethods = new ArrayMethods();
         Volume vol = new Volume();
 
-        int[] arr1 = {0, 2, 2, 15, 35, 98, 129, 156, 212};
+        int[] arr1 = {5, 1002, 2, 15, 0, -12, 129, 1002, 212};
         //methods.factorial(5);
         //methods.getDistance(1,5,8,9);
         //methods.printTriangle(9);
@@ -25,6 +25,12 @@ public class MainClass {
         //arrayMethods.sort(arr1);
         //arrayMethods.evenNumber(arr1);
         //arrayMethods.numbersZ(arr1, 16);
+        //arrayMethods.minI(arr1);
+        //arrayMethods.oneZero(arr1);
+        //arrayMethods.compare(arr1);
+        //arrayMethods.change(arr1);
+        arrayMethods.numbersK(arr1, 2);
+
 
 
 

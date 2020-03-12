@@ -227,6 +227,11 @@ public class ArrayMethods {
                     count[1]++;
                 } else count[2]++;
             }
+            System.out.println("Подсчет отрицательных, положительных и нулевых элементов завершен");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при подсчете отрицательных, положительных и нулевых элементов");
         }
         System.out.println("Positive elements: " + count[0]);
         System.out.println("Negative elements: " + count[1]);
@@ -244,17 +249,24 @@ public class ArrayMethods {
         int max = arr[0];
         int imax = 0;
         int imin = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-                imax = i;
-            } else if (arr[i] < min) {
-                min = arr[i];
-                imin = i;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                    imax = i;
+                } else if (arr[i] < min) {
+                    min = arr[i];
+                    imin = i;
+                }
             }
+            arr[imin] = max;
+            arr[imax] = min;
+            System.out.println("Замена местами наибольшего и наименьшего элементов завершена");
         }
-        arr[imin] = max;
-        arr[imax] = min;
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при замене местами наибольшего и наименьшего элементов");
+        }
         System.out.println(Arrays.toString(arr));
         return arr;
     }
@@ -272,7 +284,6 @@ public class ArrayMethods {
                 min = arr[i];
             }
         }
-        System.out.println(min);
         return min;
     }
 
@@ -298,11 +309,18 @@ public class ArrayMethods {
      *
      * @param arr
      */
-    public int minI1(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= i) {
-                System.out.print(arr[i] + " ");
+    public int minI(int[] arr) {
+        try{
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] <= i) {
+                    System.out.print(arr[i] + " ");
+                }
             }
+            System.out.println("Числа, для которых выполняется условие arr[i] ≤ i, выведены на печать");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при выводе чисел для которых выполняется условие arr[i] ≤ i");
         }
         return -1;
     }
@@ -316,10 +334,17 @@ public class ArrayMethods {
      * @param l
      */
     public int rest(int[] arr, int m, int l) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % m == l) {
-                System.out.print(arr[i] + " ");
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % m == l) {
+                    System.out.print(arr[i] + " ");
+                }
             }
+            System.out.println("Числа, для которых остаток от деления на число M равен L выведены на печать");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при выводе на печать чисел, для которых остаток от деления на число M равен L");
         }
         return -1;
     }
@@ -333,9 +358,15 @@ public class ArrayMethods {
      */
     public int[] masiv(int n) {
         int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
-            array[i] = (int) (Math.random() * 100);
-            System.out.print(array[i] + " ");
+        try {
+            for (int i = 0; i < n; i++) {
+                array[i] = (int) (Math.random() * 100);
+                System.out.print(array[i] + " ");
+            }
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при возврате рандомного массива");
         }
         return array;
     }
@@ -347,11 +378,17 @@ public class ArrayMethods {
     public int[] replaceElements(int[] arr) {
         int size = arr.length;
         int temp;
-        for (int i = 0; i < size - 1; i += 2) {
-            temp = arr[i];
-            arr[i] = arr[i + 1];
-            arr[i + 1] = temp;
-
+        try {
+            for (int i = 0; i < size - 1; i += 2) {
+                temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+            System.out.println("Замена соседних элементов (а[0] и а[1], а[2] и а[3], …) была завершена");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при замене соседних элементов (а[0] и а[1], а[2] и а[3], …)");
         }
         return arr;
     }
@@ -364,9 +401,16 @@ public class ArrayMethods {
      */
     public int oneZero(int[] arr) {
         int idx = 0;
-        while (idx<arr.length && arr[idx] != 0) {
-            System.out.print(arr[idx] + " ");
-            idx++;
+        try {
+            while (idx<arr.length && arr[idx] != 0) {
+                System.out.print(arr[idx] + " ");
+                idx++;
+            }
+            System.out.println("Числа массива до нуля были выведенны");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при выводе на печать чисел массива до нуля");
         }
         return -1;
     }
@@ -380,20 +424,25 @@ public class ArrayMethods {
     public int maxPlusMin(int[] arr) {
         int maxArr = arr[0];
         int minArr = arr[1];
-        for (int i = 2; i < arr.length; i += 2) {
-            if (maxArr < arr[i]) {
-                maxArr = arr[i];
+        try{
+            for (int i = 2; i < arr.length; i += 2) {
+                if (maxArr < arr[i]) {
+                    maxArr = arr[i];
+                }
             }
+            for (int i = 3; i < arr.length; i += 2) {
+                if (minArr > arr[i]) {
+                    minArr = arr[i];
+                }
+            }
+            System.out.println("mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]) было успешно найдено");
         }
-        for (int i = 3; i < arr.length; i += 2) {
-            if (minArr > arr[i]) {
-                minArr = arr[i];
-            }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при нахождении mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1])");
         }
         System.out.println(maxArr + minArr);
         return maxArr + minArr;
-
-
     }
 
 
@@ -427,10 +476,17 @@ public class ArrayMethods {
      * @param arr
      */
     public int[] moduleArr(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            if (Math.abs(arr[i]) > max(arr)) {
-                arr[i] = 0;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (Math.abs(arr[i]) > max(arr)) {
+                    arr[i] = 0;
+                }
             }
+            System.out.println("Замена нулями чисел, величина которых по модулю больше максимального числа прошла успешно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при замене чисел, величина которых по модулю больше максимального числа");
         }
         System.out.println(Arrays.toString(arr));
         return arr;
@@ -446,17 +502,24 @@ public class ArrayMethods {
     public int compare(int[] arr) {
         int p1 = 1;
         int p2 = 1;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 0) {
-                p1 = arr[i] * p1;
-            } else if (arr[i] > 0) {
-                p2 = arr[i] * p2;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] < 0) {
+                    p1 = arr[i] * p1;
+                } else if (arr[i] > 0) {
+                    p2 = arr[i] * p2;
+                }
             }
+            if (Math.abs(p1) > Math.abs(p2)) {
+                System.out.println("Значение p1 больше чем p2 и равно " + Math.abs(p1));
+            } else {
+                System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
+            }
+            System.out.println("Сравнение модуля P1 с модулем P2 прошло успешно");
         }
-        if (Math.abs(p1) > Math.abs(p2)) {
-            System.out.println("Значение p1 больше чем p2 и равно " + Math.abs(p1));
-        } else {
-            System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при сравнении модуля P1 с модулем P2");
         }
         return -1;
     }
@@ -471,13 +534,20 @@ public class ArrayMethods {
         public int[] change(int[] arr) {
             int changeI = arr[0];
             int idx = 0;
-            for (int i = 1; i < arr.length; i++) {
-                if (arr[i] > changeI) {
-                    changeI = arr[i];
-                    idx = i;
+            try {
+                for (int i = 1; i < arr.length; i++) {
+                    if (arr[i] > changeI) {
+                        changeI = arr[i];
+                        idx = i;
+                    }
                 }
+                arr[idx] = 0;
+                System.out.println("Замена первого максимального элемента массива нулем прошла успешно");
             }
-            arr[idx] = 0;
+            catch (Exception ex){
+                ex.printStackTrace();
+                System.out.println("Ошибка при замене максимального элемента массива нулем ");
+            }
             System.out.println(Arrays.toString(arr));
             return arr;
     }
@@ -490,18 +560,32 @@ public class ArrayMethods {
      */
     public int[] numbersK(int[] arr, int k) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 10 == k) {
-                count++;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 10 == k || arr[i] % 10 == -k ) {
+                    count++;
+                }
             }
+            System.out.println("Размер массива,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был посчитан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при определении размера массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
         }
         int[] newArr = new int[count];
         int j = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 10 == k) {
-                newArr[j] = arr[i];
-                j++;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 10 == k || arr[i] % 10 == -k) {
+                    newArr[j] = arr[i];
+                    j++;
+                }
             }
+            System.out.println("Массив,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был успешно создан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при создании массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
         }
         System.out.println(Arrays.toString(newArr));
         return newArr;
