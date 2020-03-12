@@ -72,14 +72,22 @@ public class ArrayMethods {
      */
     public int[] indexOfZeroElements(int[] arr) {
         int count = 0;
-        int[] arr1 = new int[count];
-        int temp = 0;
         try{
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] == 0) {
                     count++;
                 }
             }
+            System.out.println("Определение размера массива из номеров нулевых элементов прошла успешно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при определении размера массива из номеров нулевых элементов");
+        }
+
+        int[] arr1 = new int[count];
+        int temp = 0;
+        try{
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] == 0) {
                     arr1[temp] = i;
@@ -562,7 +570,7 @@ public class ArrayMethods {
         int count = 0;
         try {
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 10 == k || arr[i] % 10 == -k ) {
+                if (Math.abs(arr[i] % 10) == k) {
                     count++;
                 }
             }
@@ -576,7 +584,7 @@ public class ArrayMethods {
         int j = 0;
         try {
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i] % 10 == k || arr[i] % 10 == -k) {
+                if (Math.abs(arr[i] % 10) == k) {
                     newArr[j] = arr[i];
                     j++;
                 }
@@ -589,7 +597,6 @@ public class ArrayMethods {
         }
         System.out.println(Arrays.toString(newArr));
         return newArr;
-
     }
 }
 
