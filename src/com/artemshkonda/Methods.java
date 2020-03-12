@@ -328,15 +328,22 @@ public class Methods {
     }
 
     /**
-     * 14. Написать программу вычисления суммы факториалов всех нечетных чисел от 1 до 9.
+     * 14. Написать программу вычислех нечетных чисел от ения суммы факториалов вс1 до 9.
      * @return
      */
     public int sumFactorial(){
         int s = 0;
-        for (int i = 1; i<=9; i++){
-            if(i%2 != 0){
-                s = factorial(i)+s;
+        try{
+            for (int i = 1; i<=9; i++){
+                if(i%2 != 0){
+                    s = factorial(i)+s;
+                }
             }
+            System.out.println("Сумма факториалов нечетных чисел была посчитана");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при вычислении суммы факториалов нечетных чисел");
         }
         System.out.println(s);
         return s;
@@ -349,20 +356,26 @@ public class Methods {
      * @param s
      * @return
      */
-    public double Sale (double s){
-        if (s<=1000){
-            return s;
+    public double sale (double s){
+        double price = 0;
+        try{
+            if (s<=1000){
+                price = s;
+            }
+            else if  (s>=1001&&s<=2000) {
+                price = (s*0.05)+s;
+            }
+            else {
+                price = (s*0.07)+s;
+            }
+            System.out.println("Стоимость покупки была посчитана");
         }
-        else if  (s>=1001&&s<=2000) {
-            return (s*0.02)+s;
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при вычислении стоимости покупки");
         }
-        else if (s>=2001&&s<=5000) {
-            return (s*0.05)+s;
-        }
-        else {
-            return (s*0.07)+s;
-        }
-
+        System.out.println(price);
+        return price;
     }
 }
 

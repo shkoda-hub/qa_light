@@ -1,5 +1,7 @@
 package com.artemshkonda;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 
 public class ArrayMethods {
@@ -13,16 +15,25 @@ public class ArrayMethods {
      * @return
      */
     public double minNumber(double a, double b) {
-        if (a < b) {
-            System.out.println("Минимальное число: " + a);
-            return a;
-        } else if (b < a) {
-            System.out.println("Минимальное число: " + b);
-            return b;
-        } else {
-            System.out.println("а и b равны между собой");
-            return -1;
+        double min = b;
+        try{
+            if (a < b) {
+                System.out.println("Минимальное число: " + a);
+                min = a;
+            } else if (b < a) {
+                System.out.println("Минимальное число: " + b);
+                min = b;
+            } else {
+                System.out.println("а и b равны между собой");
+                a = b;
+            }
+            System.out.println("Минимальное число было найдено");
         }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при нахождении минимального числа");
+        }
+        return min;
     }
 
 
@@ -33,15 +44,22 @@ public class ArrayMethods {
      * @param k
      * @return
      */
-    public int summKr(int[] arr, int k) {
-        int summ = 0;
-        int l = arr.length;
-        for (int i = 0; i < l; i++) {
-            if (arr[i] % k == 0) {
-                summ += arr[i];
+    public int sumKr(int[] arr, int k) {
+        int sum = 0;
+        try{
+            int l = arr.length;
+            for (int i = 0; i < l; i++) {
+                if (arr[i] % k == 0) {
+                    sum += arr[i];
+                }
             }
+            System.out.println("Нахождении суммы элемнтов массива, кратных K, завершено");
         }
-        return summ;
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при нахождении суммы элемнтов массива, кратных K");
+        }
+        return sum;
 
 
     }
@@ -52,24 +70,28 @@ public class ArrayMethods {
      * @param arr
      * @return
      */
-    //находим размер массива где все эллементы нули
     public int[] indexOfZeroElements(int[] arr) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                count++;
-            }
-        }
-        //присваиваем новому масиву значения индексов первого массива, где значения равны нулю
         int[] arr1 = new int[count];
         int temp = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0) {
-                arr1[temp] = i;
-                System.out.print(arr1[temp] + " ");
-                temp++;
-
+        try{
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == 0) {
+                    count++;
+                }
             }
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] == 0) {
+                    arr1[temp] = i;
+                    System.out.print(arr1[temp] + " ");
+                    temp++;
+                }
+            }
+            System.out.println("Массив из номеров нулевых элементов был создан");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при создании массива из номеров нулевых элементов");
         }
         return arr1;
     }
@@ -81,12 +103,19 @@ public class ArrayMethods {
      * @return
      */
     public int positiveNegative(int[] arr) {
-        if (arr[0] > 0) {
-            System.out.println("Первое число в массиве является положительным");
-        } else if (arr[0] < 0) {
-            System.out.println("Первое число в массиве является отрицательным");
-        } else {
-            System.out.println("Первое чсилов в массиве равно нулю");
+        try {
+            if (arr[0] > 0) {
+                System.out.println("Первое число в массиве является положительным");
+            } else if (arr[0] < 0) {
+                System.out.println("Первое число в массиве является отрицательным");
+            } else {
+                System.out.println("Первое чсилов в массиве равно нулю");
+            }
+            System.out.println("Определение успешно завершено");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при определении");
         }
         return arr[0];
     }
@@ -98,10 +127,17 @@ public class ArrayMethods {
      */
     public boolean sort(int[] arr) {
          int i = 1;
-         while(i<arr.length && arr[i]>=arr[i-1]){
-             i++;
+         try {
+             while(i<arr.length && arr[i]>=arr[i-1]){
+                 i++;
+             }
+             System.out.println(i == arr.length);
+             System.out.println("Проверка сортировки по возрастанию єлементов массива завершена");
          }
-         System.out.println(i == arr.length);
+         catch (Exception ex){
+             ex.printStackTrace();
+             System.out.println("Ошибка при проверсе сортировке массива");
+         }
          return i == arr.length;
     }
 
@@ -114,22 +150,35 @@ public class ArrayMethods {
      */
     public int[] evenNumber(int[] arr) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                count++;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    count++;
+                }
             }
+            if (count == 0) {
+                System.out.println("В массиве нет чисел кратных двум");
+            }
+            System.out.println("Вычисления размера массива кратных чилел прошло успешно");
         }
-        if (count == 0) {
-            System.out.println("В массиве нет чисел кратных двум");
-
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при вычислении размера массива кратных чисел");
         }
         int[] newArr = new int[count];
         int j = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                newArr[j] = arr[i];
-                j++;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % 2 == 0) {
+                    newArr[j] = arr[i];
+                    j++;
+                }
             }
+            System.out.println("Создание нового массива кратных чисел прошло успешно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при создании нового массива кратных чисел");
         }
         System.out.println(Arrays.toString(newArr));
         return newArr;
@@ -141,11 +190,18 @@ public class ArrayMethods {
      */
     public int[] numbersZ(int[] arr, int z) {
         int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > z) {
-                arr[i] = z;
-                count++;
+        try{
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > z) {
+                    arr[i] = z;
+                    count++;
+                }
             }
+            System.out.println("Замена элементов которые больше числа Z прошла успешно");
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            System.out.println("Ошибка при замене элементовк которые больше числа Z");
         }
         System.out.println(Arrays.toString(arr));
         System.out.println("Кол-во замен: " + count);
@@ -163,12 +219,14 @@ public class ArrayMethods {
         int[] count = new int[3];
         count[0] = count[1] = count[2] = 0;
         int size = a.length;
-        for (int i = 0; i < size; i++) {
-            if (a[i] > 0) {
-                count[0]++;
-            } else if (a[i] < 0) {
-                count[1]++;
-            } else count[2]++;
+        try {
+            for (int i = 0; i < size; i++) {
+                if (a[i] > 0) {
+                    count[0]++;
+                } else if (a[i] < 0) {
+                    count[1]++;
+                } else count[2]++;
+            }
         }
         System.out.println("Positive elements: " + count[0]);
         System.out.println("Negative elements: " + count[1]);
