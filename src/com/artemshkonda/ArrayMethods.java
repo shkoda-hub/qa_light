@@ -1,10 +1,15 @@
 package com.artemshkonda;
 
 import org.w3c.dom.ls.LSOutput;
+import org.apache.log4j.Logger;
 
 import java.util.Arrays;
 
 public class ArrayMethods {
+    Logger log;
+    public ArrayMethods(){
+        log = Logger.getLogger(getClass());
+    }
 
 
     /**
@@ -18,20 +23,17 @@ public class ArrayMethods {
         double min = b;
         try{
             if (a < b) {
-                System.out.println("Минимальное число: " + a);
                 min = a;
             } else if (b < a) {
-                System.out.println("Минимальное число: " + b);
                 min = b;
             } else {
-                System.out.println("а и b равны между собой");
                 a = b;
             }
-            System.out.println("Минимальное число было найдено");
+            log.info("Минимальное число было найдено: "+min);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при нахождении минимального числа");
+            log.error("Ошибка при нахождении минимального числа");
         }
         return min;
     }
@@ -53,11 +55,11 @@ public class ArrayMethods {
                     sum += arr[i];
                 }
             }
-            System.out.println("Нахождении суммы элемнтов массива, кратных K, завершено");
+            log.info("Нахождении суммы элемнтов массива, кратных K, завершено: "+sum);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при нахождении суммы элемнтов массива, кратных K");
+            log.error("Ошибка при нахождении суммы элемнтов массива, кратных K");
         }
         return sum;
 
@@ -78,11 +80,11 @@ public class ArrayMethods {
                     count++;
                 }
             }
-            System.out.println("Определение размера массива из номеров нулевых элементов прошла успешно");
+            log.info("Определение размера массива из номеров нулевых элементов прошла успешно: "+count);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при определении размера массива из номеров нулевых элементов");
+            log.error("Ошибка при определении размера массива из номеров нулевых элементов");
         }
 
         int[] arr1 = new int[count];
@@ -91,15 +93,14 @@ public class ArrayMethods {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] == 0) {
                     arr1[temp] = i;
-                    System.out.print(arr1[temp] + " ");
                     temp++;
                 }
             }
-            System.out.println("Массив из номеров нулевых элементов был создан");
+            log.info("Массив из номеров нулевых элементов был создан: "+Arrays.toString(arr1));
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при создании массива из номеров нулевых элементов");
+            log.error("Ошибка при создании массива из номеров нулевых элементов");
         }
         return arr1;
     }
@@ -119,11 +120,11 @@ public class ArrayMethods {
             } else {
                 System.out.println("Первое чсилов в массиве равно нулю");
             }
-            System.out.println("Определение успешно завершено");
+            log.info("Определение успешно завершено: " + arr[0]);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при определении");
+            log.error("Ошибка при определении");
         }
         return arr[0];
     }
@@ -140,11 +141,11 @@ public class ArrayMethods {
                  i++;
              }
              System.out.println(i == arr.length);
-             System.out.println("Проверка сортировки по возрастанию єлементов массива завершена");
+             log.info("Проверка сортировки по возрастанию єлементов массива завершена");
          }
          catch (Exception ex){
              ex.printStackTrace();
-             System.out.println("Ошибка при проверсе сортировке массива");
+             log.error("Ошибка при проверсе сортировке массива");
          }
          return i == arr.length;
     }
@@ -167,11 +168,11 @@ public class ArrayMethods {
             if (count == 0) {
                 System.out.println("В массиве нет чисел кратных двум");
             }
-            System.out.println("Вычисления размера массива кратных чилел прошло успешно");
+            log.info("Вычисления размера массива кратных чилел прошло успешно: "+count);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при вычислении размера массива кратных чисел");
+            log.error("Ошибка при вычислении размера массива кратных чисел");
         }
         int[] newArr = new int[count];
         int j = 0;
@@ -182,7 +183,7 @@ public class ArrayMethods {
                     j++;
                 }
             }
-            System.out.println("Создание нового массива кратных чисел прошло успешно");
+            log.info("Создание нового массива кратных чисел прошло успешно: "+Arrays.toString(newArr));
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -196,7 +197,7 @@ public class ArrayMethods {
      * 7.Дан массив чисел. Заменить все его элементы, большие данного числа Z, этим числом. Подсчитать
      * количество замен.
      */
-    public int[] numbersZ(int[] arr, int z) {
+    public int numbersZ(int[] arr, int z) {
         int count = 0;
         try{
             for (int i = 0; i < arr.length; i++) {
@@ -205,15 +206,13 @@ public class ArrayMethods {
                     count++;
                 }
             }
-            System.out.println("Замена элементов которые больше числа Z прошла успешно");
+            log.info("Замена элементов которые больше числа Z прошла успешно. Кол-во замен: "+count);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при замене элементовк которые больше числа Z");
+            log.error("Ошибка при замене элементовк которые больше числа Z");
         }
-        System.out.println(Arrays.toString(arr));
-        System.out.println("Кол-во замен: " + count);
-        return arr;
+        return count;
     }
 
     /**
@@ -235,15 +234,12 @@ public class ArrayMethods {
                     count[1]++;
                 } else count[2]++;
             }
-            System.out.println("Подсчет отрицательных, положительных и нулевых элементов завершен");
+            log.info("Подсчет отрицательных, положительных и нулевых элементов завершен. Положительных элементов: "+count[0]+ ". Отрицательных элементов: "+ count[1] + ". Нулевых элементов: " + count[2]);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при подсчете отрицательных, положительных и нулевых элементов");
+            log.error("Ошибка при подсчете отрицательных, положительных и нулевых элементов");
         }
-        System.out.println("Positive elements: " + count[0]);
-        System.out.println("Negative elements: " + count[1]);
-        System.out.println("Zero elements: " + count[2]);
         return count;
     }
 
@@ -269,13 +265,12 @@ public class ArrayMethods {
             }
             arr[imin] = max;
             arr[imax] = min;
-            System.out.println("Замена местами наибольшего и наименьшего элементов завершена");
+            log.info("Замена местами наибольшего и наименьшего элементов завершена: "+Arrays.toString(arr));
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при замене местами наибольшего и наименьшего элементов");
+            log.error("Ошибка при замене местами наибольшего и наименьшего элементов");
         }
-        System.out.println(Arrays.toString(arr));
         return arr;
     }
 
@@ -317,20 +312,37 @@ public class ArrayMethods {
      *
      * @param arr
      */
-    public int minI(int[] arr) {
+    public int[] minI(int[] arr) {
+        int count = 0;
         try{
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] <= i) {
-                    System.out.print(arr[i] + " ");
+                    count++;
                 }
             }
-            System.out.println("Числа, для которых выполняется условие arr[i] ≤ i, выведены на печать");
+            log.info("Размер нового массива, для которого выполняется условие arr[i] ≤ i, был посчитан:" +count );
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при выводе чисел для которых выполняется условие arr[i] ≤ i");
+            log.error("Ошибка при подсчете размера массива, для которого выполняется условие arr[i] ≤ i");
         }
-        return -1;
+        int[] newArr = new int[count];
+        int j = 0;
+        try{
+            for (int i = 0; i<arr.length; i++) {
+                if (arr[i] <= i) {
+                    newArr[j] = arr[i];
+                    j++;
+                }
+            }
+            log.info("Массив, для которого выполняется условие arr[i] ≤ i был успешно создан: "+Arrays.toString(newArr));
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            log.error("Ошибка при создании массива, для которого выполняется условие arr[i] ≤ i");
+        }
+        return newArr;
+
     }
 
 
@@ -341,20 +353,36 @@ public class ArrayMethods {
      * @param m
      * @param l
      */
-    public int rest(int[] arr, int m, int l) {
+    public int[] rest(int[] arr, int m, int l) {
+        int count = 0;
         try {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] % m == l) {
-                    System.out.print(arr[i] + " ");
+                    count++;
                 }
             }
-            System.out.println("Числа, для которых остаток от деления на число M равен L выведены на печать");
+            log.info("Размер нового массива, для чисел которого остаток от деления на число M равен L был посчитан: " +count );
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при выводе на печать чисел, для которых остаток от деления на число M равен L");
+            log.error("Ошибка при выводе на печать чисел, для которых остаток от деления на число M равен L");
         }
-        return -1;
+        int[] newArr = new int[count];
+        int j = 0;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] % m == l) {
+                    newArr[j] = arr[i];
+                    j++;
+                }
+            }
+            log.info("Массив, для чисел которого остаток от деления на число M равен L был создан: "+Arrays.toString(newArr));
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
+            log.error("Ошибка при создании массива, для чисел которого остаток от деления на число M равен L был");
+        }
+        return newArr;
     }
 
 
@@ -369,7 +397,6 @@ public class ArrayMethods {
         try {
             for (int i = 0; i < n; i++) {
                 array[i] = (int) (Math.random() * 100);
-                System.out.print(array[i] + " ");
             }
         }
         catch (Exception ex){
@@ -392,11 +419,11 @@ public class ArrayMethods {
                 arr[i] = arr[i + 1];
                 arr[i + 1] = temp;
             }
-            System.out.println("Замена соседних элементов (а[0] и а[1], а[2] и а[3], …) была завершена");
+            log.info("Замена соседних элементов (а[0] и а[1], а[2] и а[3], …) была завершена");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при замене соседних элементов (а[0] и а[1], а[2] и а[3], …)");
+            log.error("Ошибка при замене соседних элементов (а[0] и а[1], а[2] и а[3], …)");
         }
         return arr;
     }
@@ -407,20 +434,27 @@ public class ArrayMethods {
      *
      * @param arr
      */
-    public int oneZero(int[] arr) {
+    public int[] oneZero(int[] arr) {
         int idx = 0;
         try {
             while (idx<arr.length && arr[idx] != 0) {
-                System.out.print(arr[idx] + " ");
                 idx++;
             }
-            System.out.println("Числа массива до нуля были выведенны");
+            log.info("Числа массива до нуля были выведенны");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при выводе на печать чисел массива до нуля");
+            log.error("Ошибка при выводе на печать чисел массива до нуля");
         }
-        return -1;
+        int[] newArr = new int[idx];
+        int j = 0;
+        while (idx<arr.length && arr[idx] != 0){
+            newArr[j]=arr[idx];
+            j++;
+            idx++;
+        }
+        System.out.println(Arrays.toString(newArr));
+        return newArr;
     }
 
 
@@ -443,13 +477,12 @@ public class ArrayMethods {
                     minArr = arr[i];
                 }
             }
-            System.out.println("mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]) было успешно найдено");
+            log.info("mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1]) было успешно найдено: "+(maxArr+minArr));
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при нахождении mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1])");
+            log.error("Ошибка при нахождении mаx(а[0], а[2], ..., а[2к]) + min(а[1], а[3], …, а[2к-1])");
         }
-        System.out.println(maxArr + minArr);
         return maxArr + minArr;
     }
 
@@ -490,13 +523,12 @@ public class ArrayMethods {
                     arr[i] = 0;
                 }
             }
-            System.out.println("Замена нулями чисел, величина которых по модулю больше максимального числа прошла успешно");
+            log.info("Замена нулями чисел, величина которых по модулю больше максимального числа прошла успешно: "+Arrays.toString(arr));
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при замене чисел, величина которых по модулю больше максимального числа");
+            log.error("Ошибка при замене чисел, величина которых по модулю больше максимального числа");
         }
-        System.out.println(Arrays.toString(arr));
         return arr;
     }
 
@@ -523,11 +555,11 @@ public class ArrayMethods {
             } else {
                 System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
             }
-            System.out.println("Сравнение модуля P1 с модулем P2 прошло успешно");
+            log.info("Сравнение модуля P1 с модулем P2 прошло успешно");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при сравнении модуля P1 с модулем P2");
+            log.error("Ошибка при сравнении модуля P1 с модулем P2");
         }
         return -1;
     }
@@ -550,13 +582,12 @@ public class ArrayMethods {
                     }
                 }
                 arr[idx] = 0;
-                System.out.println("Замена первого максимального элемента массива нулем прошла успешно");
+                log.info("Замена первого максимального элемента массива нулем прошла успешно: "+Arrays.toString(arr));
             }
             catch (Exception ex){
                 ex.printStackTrace();
-                System.out.println("Ошибка при замене максимального элемента массива нулем ");
+                log.error("Ошибка при замене максимального элемента массива нулем ");
             }
-            System.out.println(Arrays.toString(arr));
             return arr;
     }
 
@@ -574,11 +605,11 @@ public class ArrayMethods {
                     count++;
                 }
             }
-            System.out.println("Размер массива,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был посчитан");
+            log.info("Размер массива,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был посчитан: "+count);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при определении размера массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
+            log.error("Ошибка при определении размера массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
         }
         int[] newArr = new int[count];
         int j = 0;
@@ -589,13 +620,12 @@ public class ArrayMethods {
                     j++;
                 }
             }
-            System.out.println("Массив,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был успешно создан");
+            log.info("Массив,элементами которого будут элементы исходного,оканчивающиеся на цифру k, был успешно создан: "+Arrays.toString(newArr));
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при создании массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
+            log.info("Ошибка при создании массива, элементами которого будут элементы исходного,оканчивающиеся на цифру k");
         }
-        System.out.println(Arrays.toString(newArr));
         return newArr;
     }
 }

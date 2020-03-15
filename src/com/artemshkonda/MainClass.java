@@ -1,5 +1,7 @@
 package com.artemshkonda;
 
+import org.junit.Assert;
+
 import java.util.Arrays;
 
 public class MainClass {
@@ -8,18 +10,26 @@ public class MainClass {
         ArrayMethods arrayMethods = new ArrayMethods();
         Volume vol = new Volume();
 
-        int[] arr1 = {5, 1002, 2, 15, 0, -12, 0, 1002, 212};
-        methods.factorial(5);
-        methods.getDistance(1,5,8,9);
-        methods.printTriangle(9);
-        methods.index(20, 170);
-        //methods.number();
-        methods.poll(2, 2, 2);
-        methods.exam(arr1);
-        methods.printStr("Вывод вывод", 6);
-        methods.maxMin(arr1);
-        methods.triangleSquare(5, 6,12);
-        methods.sale(2500);
+        Assert.assertEquals("Факториал", 1 , methods.factorial(1));
+        Assert.assertEquals("", 120,methods.factorial(5) );
+        Assert.assertNotEquals("", 120, methods.factorial(6) );
+
+        Assert.assertFalse("Not false", methods.triangle(56, 8, 6));
+        Assert.assertTrue("Not true",methods.triangle(5, 8, 6));
+
+        Assert.assertEquals("", 7.071,  methods.getDistance(4, 7, 9 ,2), 0.01);
+        Assert.assertEquals("", 0,  methods.getDistance(0, 0, 0 ,0), 0.01);
+        Assert.assertNotEquals();
+
+        //Assert.assertEquals("Expected doesnt equals actual", 120, methods.factorial(5));
+        //Assert.assertNotEquals("Expected doesnt equals actual", 120, methods.factorial(6));
+
+
+        //System.out.println(methods.sqrSixangles(0));
+
+
+
+
         /*arrayMethods.minNumber(7, 7);
         arrayMethods.indexOfZeroElements(arr1);
         arrayMethods.sort(arr1);

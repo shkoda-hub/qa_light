@@ -23,7 +23,7 @@ public class Methods {
             for (int i = 1; i<=n; i++){
                 fac = fac*i;
             }
-            log.info("Фактриал числа был посчитан");
+            log.info("Фактриал числа был посчитан: "+fac);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -45,7 +45,7 @@ public class Methods {
         double l = 0;
         try{
             l = Math.sqrt(((x2-x1)*(x2-x1))+(y2-y1)*(y2-y1));
-            log.info("Расстояние между точками было посчитано");
+            log.info("Расстояние между точками было посчитано: "+l);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -73,7 +73,7 @@ public class Methods {
             else {
                 t = true;
             }
-            log.info("Проверка возможности существования треугольника выполнена");
+            log.info("Проверка возможности существования треугольника выполнена: "+t);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -100,7 +100,6 @@ public class Methods {
         catch (Exception ex){
             ex.printStackTrace();
             log.error("Треугольник не был выведен");
-            return -1;
         }
         return 1;
     }
@@ -116,7 +115,7 @@ public class Methods {
         double idx = 1;
         try{
             idx = (m/(h*h));
-            log.info("Индекс массы тела был посчитан");
+            log.info("Индекс массы тела был посчитан: "+idx);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -152,7 +151,7 @@ public class Methods {
                 check = false;
                 System.out.println("Среди указаного значения одинаковых цифр не найденно");
             }
-            log.info("Проверка на одинаковые цифры прошла успешно");
+            log.info("Проверка на одинаковые цифры прошла успешно: "+false);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -317,7 +316,10 @@ public class Methods {
      * @return
      */
         public double sqrSixangles(double a){
-            double s = -1.0;
+            double s = -1;
+            if(triangleSquare(a, a, a)==-1){
+                return s;
+            }
             try{
                 s = triangleSquare(a, a, a)*6;
                 log.info("Площадь шестиугольника расчитана");
