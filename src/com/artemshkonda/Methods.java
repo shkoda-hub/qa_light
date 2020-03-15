@@ -1,12 +1,16 @@
 package com.artemshkonda;
 
-import javax.xml.crypto.dsig.spec.HMACParameterSpec;
+import org.apache.log4j.Logger;
 import java.io.InputStream;
 import java.sql.SQLOutput;
 import java.util.*;
 
 public class Methods {
+    Logger log;
     ArrayMethods arrayMethods = new ArrayMethods();
+    public Methods(){
+        log =Logger.getLogger(getClass());
+    }
 
     /**
      * 1 Написать метод возвращающий факториал заданного числа N
@@ -19,11 +23,11 @@ public class Methods {
             for (int i = 1; i<=n; i++){
                 fac = fac*i;
             }
-            System.out.println("Фактриал числа был посчитан");
+            log.info("Фактриал числа был посчитан");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("При расчете факториала произошла ошибка");
+            log.error("При расчете факториала произошла ошибка");
         }
         return fac;
     }
@@ -41,11 +45,11 @@ public class Methods {
         double l = 0;
         try{
             l = Math.sqrt(((x2-x1)*(x2-x1))+(y2-y1)*(y2-y1));
-            System.out.println("Расстояние между точками было посчитано");
+            log.info("Расстояние между точками было посчитано");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при расчете расстояния между точками");
+            log.error("Ошибка при расчете расстояния между точками");
         }
         return l;
     }
@@ -69,11 +73,11 @@ public class Methods {
             else {
                 t = true;
             }
-            System.out.println("Проверка возможности существования треугольника выполнена");
+            log.info("Проверка возможности существования треугольника выполнена");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Проверка не была выполнена");
+            log.error("Проверка не была выполнена");
             t = false;
         }
         return t;
@@ -91,11 +95,11 @@ public class Methods {
                 }
                 System.out.println();
             }
-            System.out.println("Треугольник из нулей выведен");
+            log.info("Треугольник из нулей выведен");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Треугольник не был выведен");
+            log.error("Треугольник не был выведен");
             return -1;
         }
         return 1;
@@ -112,11 +116,11 @@ public class Methods {
         double idx = 1;
         try{
             idx = (m/(h*h));
-            System.out.println("Индекс массы тела был посчитан");
+            log.info("Индекс массы тела был посчитан");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при расчете интедка массы тела");
+            log.error(  "Ошибка при расчете интедка массы тела");
         }
         return idx;
     }
@@ -148,11 +152,11 @@ public class Methods {
                 check = false;
                 System.out.println("Среди указаного значения одинаковых цифр не найденно");
             }
-            System.out.println("Проверка на одинаковые цифры прошла успешно");
+            log.info("Проверка на одинаковые цифры прошла успешно");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Произошла ошибка при проверке на одинаковые цифры");
+            log.error("Произошла ошибка при проверке на одинаковые цифры");
         }
         return check;
     }
@@ -170,11 +174,11 @@ public class Methods {
         double v = 0;
         try{
             v = l*h*m;
-            System.out.println("Объем бассейна был посчитан");
+            log.info("Объем бассейна был посчитан");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при расчете объема бассейна");
+            log.error("Ошибка при расчете объема бассейна");
         }
         return v;
     }
@@ -202,11 +206,11 @@ public class Methods {
             else {
                 System.out.println("Ко второму экзамену не допущено " + count + " студентов");
             }
-            System.out.println("Подсчет кол-ва студентов, которые не допущены ко второму экзамену завершен успешно");
+            log.info("Подсчет кол-ва студентов, которые не допущены ко второму экзамену завершен успешно");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при подсчете кол-ва студентов, которые не допущены ко второму экзамену");
+            log.error("Ошибка при подсчете кол-ва студентов, которые не допущены ко второму экзамену");
         }
         return count;
     }
@@ -227,13 +231,13 @@ public class Methods {
                     imax = i;
                 }
             }
-            System.out.println("Определение банка с выгодным курсом прошло успешно");
+            log.info("Определение банка с выгодным курсом прошло успешно");
         }
         catch (Exception ex){
             ex.printStackTrace();
             System.out.println("Ошибка при определении банка с выгодным курсом");
         }
-        System.out.println("Вам выгодно обменять доллары на рубли в банке под номером "+imax);
+        log.error("Вам выгодно обменять доллары на рубли в банке под номером "+imax);
         return imax;
     }
 
@@ -249,12 +253,12 @@ public class Methods {
             {
                 System.out.println(a);
             }
-            System.out.println("Строку было выведенно "+n+" раз");
+            log.info("Строку было выведенно "+n+" раз");
             r = true;
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при выводе строки");
+            log.error("Ошибка при выводе строки");
             r = false;
         }
         return r;
@@ -269,11 +273,11 @@ public class Methods {
         int res = 0;
         try{
             res = arrayMethods.max(arr)+arrayMethods.min(arr);
-            System.out.println("Сумма большего и меньшего значения масива была посчитана");
+            log.info("Сумма большего и меньшего значения масива была посчитана");
             }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при нахождении суммы большего и меньшего значения масива");
+            log.error("Ошибка при нахождении суммы большего и меньшего значения масива");
         }
         return res;
     }
@@ -296,11 +300,11 @@ public class Methods {
             else {
                 System.out.println("Треугольник не существует");
             }
-            System.out.println("Метод расчета площади треугольника был выполнен");
+            log.info("Метод расчета площади треугольника был выполнен");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при вычислении плащади треугольника");
+            log.error("Ошибка при вычислении плащади треугольника");
         }
         return s;
     }
@@ -316,12 +320,12 @@ public class Methods {
             double s = -1.0;
             try{
                 s = triangleSquare(a, a, a)*6;
-                System.out.println("Площадь шестиугольника расчитана");
+                log.info("Площадь шестиугольника расчитана");
                 System.out.println(s);
             }
             catch (Exception ex){
                 ex.printStackTrace();
-                System.out.println("Ошибка при расчете шестиугольника");
+                log.error("Ошибка при расчете шестиугольника");
 
             }
             return s;
@@ -339,11 +343,11 @@ public class Methods {
                     s = factorial(i)+s;
                 }
             }
-            System.out.println("Сумма факториалов нечетных чисел была посчитана");
+            log.info("Сумма факториалов нечетных чисел была посчитана");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при вычислении суммы факториалов нечетных чисел");
+            log.error("Ошибка при вычислении суммы факториалов нечетных чисел");
         }
         System.out.println(s);
         return s;
@@ -368,11 +372,11 @@ public class Methods {
             else {
                 price = (s*0.07)+s;
             }
-            System.out.println("Стоимость покупки была посчитана");
+            log.info("Стоимость покупки была посчитана");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            System.out.println("Ошибка при вычислении стоимости покупки");
+            log.error("Ошибка при вычислении стоимости покупки");
         }
         System.out.println(price);
         return price;

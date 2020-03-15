@@ -13,14 +13,14 @@ public class MainClass {
         methods.getDistance(1,5,8,9);
         methods.printTriangle(9);
         methods.index(20, 170);
-        methods.number();
+        //methods.number();
         methods.poll(2, 2, 2);
         methods.exam(arr1);
         methods.printStr("Вывод вывод", 6);
         methods.maxMin(arr1);
         methods.triangleSquare(5, 6,12);
         methods.sale(2500);
-        arrayMethods.minNumber(7, 7);
+        /*arrayMethods.minNumber(7, 7);
         arrayMethods.indexOfZeroElements(arr1);
         arrayMethods.sort(arr1);
         arrayMethods.evenNumber(arr1);
@@ -30,6 +30,8 @@ public class MainClass {
         arrayMethods.compare(arr1);
         arrayMethods.change(arr1);
         arrayMethods.numbersK(arr1, 2);
+
+         */
 
 
 
