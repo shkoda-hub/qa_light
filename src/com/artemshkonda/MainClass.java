@@ -10,16 +10,58 @@ public class MainClass {
         ArrayMethods arrayMethods = new ArrayMethods();
         Volume vol = new Volume();
 
-        Assert.assertEquals("Факториал", 1 , methods.factorial(1));
+        Assert.assertEquals("", 1 , methods.factorial(1));
         Assert.assertEquals("", 120,methods.factorial(5) );
         Assert.assertNotEquals("", 120, methods.factorial(6) );
 
-        Assert.assertFalse("Not false", methods.triangle(56, 8, 6));
-        Assert.assertTrue("Not true",methods.triangle(5, 8, 6));
-
         Assert.assertEquals("", 7.071,  methods.getDistance(4, 7, 9 ,2), 0.01);
-        Assert.assertEquals("", 0,  methods.getDistance(0, 0, 0 ,0), 0.01);
-        Assert.assertNotEquals();
+        Assert.assertEquals("", 26.66565311407167,  methods.getDistance(2.5, 1.09, 12 ,26.006), 0.00000000000001);
+
+        Assert.assertFalse("Not false", methods.triangle(56, 8, 6));
+        Assert.assertTrue("Not true", methods.triangle(5, 8, 6));
+
+        Assert.assertTrue("", methods.printTriangle(5));
+        Assert.assertTrue("", methods.printTriangle(1));
+        Assert.assertFalse("", methods.printTriangle(0));
+        Assert.assertFalse("", methods.printTriangle(-1));
+
+        Assert.assertEquals("", 0.0888, methods.index(20, 15), 0.0001);
+        Assert.assertEquals("", 0.0888, methods.index(20, 15), 0.0001);
+        Assert.assertTrue("", Double.isInfinite(methods.index(20, 0)) );
+
+        //Assert.assertTrue("", methods.number());
+
+        Assert.assertEquals("", 1, methods.poll(1,1,1), 0.0001);
+        Assert.assertEquals("", 100, methods.poll(2,5,10), 0.0001);
+        Assert.assertEquals("", 147.4713, methods.poll(2.35,5.0203,12.5), 0.0001);
+
+        int[] arrExam = {2, 5, 3, 5, 10, 6, 1, 0, 3, 2, 1, 10, 12, 8};
+        int[] arrExam2 = {3, 5, 3, 5, 10, 6, 5, 3, 3, 6, 7, 10, 12, 8};
+        Assert.assertEquals("", 5, methods.exam(arrExam));
+        Assert.assertEquals("", 0, methods.exam(arrExam2));
+
+        int[] arrBank = {25, 24, 20, 33, 24, 45, 12, 44, 102, 25, 55, 12, 28, 30};
+        int[] arrBank2 = {150, 24, 20, 33, 24, 45, 12, 44, 102, 25, 55, 12, 28, 30};
+        int[] arrBank3 = {25, 24, 20, 33, 24, 45, 12, 44, 102, 25, 55, 12, 28, 230};
+        Assert.assertEquals("", 8, methods.bank(arrBank));
+        Assert.assertEquals("", 0, methods.bank(arrBank2));
+        Assert.assertEquals("", 13, methods.bank(arrBank3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //Assert.assertEquals("Expected doesnt equals actual", 120, methods.factorial(5));
         //Assert.assertNotEquals("Expected doesnt equals actual", 120, methods.factorial(6));

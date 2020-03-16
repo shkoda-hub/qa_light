@@ -87,21 +87,23 @@ public class Methods {
      * 4 Почитать про вложенный цикл и вывести треугольник из нулей на экран
      * @param a
      */
-    public int printTriangle(int a){
+    public boolean printTriangle(int a){
+        boolean r = false;
         try{
             for (int i=0; i<a; i++){
                 for (int j=0; j<=i; j++){
                     System.out.print("0 ");
                 }
                 System.out.println();
+                r = true;
             }
-            log.info("Треугольник из нулей выведен");
+            log.info("Статус вывода треугольника: "+ r);
         }
         catch (Exception ex){
             ex.printStackTrace();
-            log.error("Треугольник не был выведен");
+            log.error("Ошибка при выводе трегольника");
         }
-        return 1;
+        return r;
     }
 
     /**
@@ -117,7 +119,7 @@ public class Methods {
             idx = (m/(h*h));
             log.info("Индекс массы тела был посчитан: "+idx);
         }
-        catch (Exception ex){
+        catch (ArithmeticException ex){
             ex.printStackTrace();
             log.error(  "Ошибка при расчете интедка массы тела");
         }
@@ -151,7 +153,7 @@ public class Methods {
                 check = false;
                 System.out.println("Среди указаного значения одинаковых цифр не найденно");
             }
-            log.info("Проверка на одинаковые цифры прошла успешно: "+false);
+            log.info("Проверка на одинаковые цифры прошла успешно: "+check);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -173,7 +175,7 @@ public class Methods {
         double v = 0;
         try{
             v = l*h*m;
-            log.info("Объем бассейна был посчитан");
+            log.info("Объем бассейна был посчитан: "+v);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -199,13 +201,7 @@ public class Methods {
                 }
 
             }
-            if (count == 0) {
-                System.out.println("Ко второму экзамену допущены все студенты");
-            }
-            else {
-                System.out.println("Ко второму экзамену не допущено " + count + " студентов");
-            }
-            log.info("Подсчет кол-ва студентов, которые не допущены ко второму экзамену завершен успешно");
+            log.info("Подсчет кол-ва студентов, которые не допущены ко второму экзамену завершен успешно: "+ count);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -225,18 +221,18 @@ public class Methods {
         int imax = 0;
         int max = arr[0];
         try{
-            for (int i = 0; i<arr.length; i++){
+            for (int i = 1; i<arr.length; i++){
                 if(arr[i]>max){
+                    max = arr[i];
                     imax = i;
                 }
             }
-            log.info("Определение банка с выгодным курсом прошло успешно");
+            log.info("Определение банка с выгодным курсом прошло успешно: "+imax);
         }
         catch (Exception ex){
             ex.printStackTrace();
             System.out.println("Ошибка при определении банка с выгодным курсом");
         }
-        log.error("Вам выгодно обменять доллары на рубли в банке под номером "+imax);
         return imax;
     }
 
