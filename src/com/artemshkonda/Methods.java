@@ -268,7 +268,7 @@ public class Methods {
         int res = 0;
         try{
             res = arrayMethods.max(arr)+arrayMethods.min(arr);
-            log.info("Сумма большего и меньшего значения масива была посчитана");
+            log.info("Сумма большего и меньшего значения масива была посчитана: "+res);
             }
         catch (Exception ex){
             ex.printStackTrace();
@@ -295,7 +295,7 @@ public class Methods {
             else {
                 System.out.println("Треугольник не существует");
             }
-            log.info("Метод расчета площади треугольника был выполнен");
+            log.info("Метод расчета площади треугольника был выполнен: "+s);
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -318,7 +318,7 @@ public class Methods {
             }
             try{
                 s = triangleSquare(a, a, a)*6;
-                log.info("Площадь шестиугольника расчитана");
+                log.info("Площадь шестиугольника расчитана: "+s);
                 System.out.println(s);
             }
             catch (Exception ex){
@@ -341,13 +341,12 @@ public class Methods {
                     s = factorial(i)+s;
                 }
             }
-            log.info("Сумма факториалов нечетных чисел была посчитана");
+            log.info("Сумма факториалов нечетных чисел была посчитана: "+s);
         }
         catch (Exception ex){
             ex.printStackTrace();
             log.error("Ошибка при вычислении суммы факториалов нечетных чисел");
         }
-        System.out.println(s);
         return s;
     }
 
@@ -365,18 +364,20 @@ public class Methods {
                 price = s;
             }
             else if  (s>=1001&&s<=2000) {
-                price = (s*0.05)+s;
+                price = s-(s*0.02);
+            }
+            else if (s>=2001&&s<=5000){
+                price = s-(s*0.05);
             }
             else {
-                price = (s*0.07)+s;
+                price = s-(s*0.07);
             }
-            log.info("Стоимость покупки была посчитана");
+            log.info("Стоимость покупки была посчитана: "+price);
         }
         catch (Exception ex){
             ex.printStackTrace();
             log.error("Ошибка при вычислении стоимости покупки");
         }
-        System.out.println(price);
         return price;
     }
 }

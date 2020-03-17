@@ -47,6 +47,38 @@ public class MainClass {
         Assert.assertEquals("", 0, methods.bank(arrBank2));
         Assert.assertEquals("", 13, methods.bank(arrBank3));
 
+        int[] arrMaxMin = {12, 56, 78, 1, 98};
+        int[] arrMaxMin2 = {2, 56, 78, 10, 98};
+        Assert.assertEquals("", 99, methods.maxMin(arrMaxMin));
+        Assert.assertEquals("", 100, methods.maxMin(arrMaxMin2));
+
+        Assert.assertEquals("", 1.95, methods.triangleSquare(2.2, 5,7.1), 0.01);
+
+        Assert.assertEquals("", 52.61, methods.sqrSixangles(4.5), 0.01);
+
+        Assert.assertEquals("", 368047, methods.sumFactorial());
+
+        Assert.assertEquals("", 999, methods.sale(999), 0.01);
+        Assert.assertEquals("", 1000, methods.sale(1000), 0.01);
+        Assert.assertEquals("", 980.98, methods.sale(1001), 0.01);
+        Assert.assertEquals("", 1470, methods.sale(1500), 0.01);
+        Assert.assertEquals("", 1960, methods.sale(2000), 0.01);
+        Assert.assertEquals("", 1900.95, methods.sale(2001), 0.01);
+        Assert.assertEquals("", 2375, methods.sale(2500), 0.01);
+        Assert.assertEquals("", 4750, methods.sale(5000), 0.01);
+        Assert.assertEquals("", 4650.93, methods.sale(5001), 0.01);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
