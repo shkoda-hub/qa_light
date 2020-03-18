@@ -68,6 +68,53 @@ public class MainClass {
         Assert.assertEquals("", 4750, methods.sale(5000), 0.01);
         Assert.assertEquals("", 4650.93, methods.sale(5001), 0.01);
 
+        Assert.assertEquals("", 2, arrayMethods.minNumber(12, 2), 0.01);
+        Assert.assertEquals("", 3, arrayMethods.minNumber(3, 9), 0.01);
+        Assert.assertEquals("", 12, arrayMethods.minNumber(12, 12), 0.01);
+
+        int [] arrSumKr = {10, 12, 44, 11, 45, 15, 99, 7, 25};
+        Assert.assertEquals("", 95, arrayMethods.sumKr(arrSumKr, 5));
+
+        int [] arrIndexOfZeroElements = {0, 5, 7, -2, 0, 12, 56, 0, 1, 0, 19, 0};
+        int [] expectedIndexOfZeroElements = {0, 4, 7, 9, 11};
+        int [] arrIndexOfZeroElements2 = {98, 5, 7, -2, 15, 12, 56, 1, 1, 3, 19, 2};
+        int [] expectedIndexOfZeroElements2 = {};
+        Assert.assertArrayEquals(expectedIndexOfZeroElements, arrayMethods.indexOfZeroElements(arrIndexOfZeroElements));
+        Assert.assertArrayEquals(expectedIndexOfZeroElements2, arrayMethods.indexOfZeroElements(arrIndexOfZeroElements2));
+
+        int [] positiveNegative1 = {-2,12,44,-7,0};
+        int [] positiveNegative2 = {0,12,4,5};
+        int [] positiveNegative3 = {3,-1,5,-1};
+        Assert.assertEquals(-2, arrayMethods.positiveNegative(positiveNegative1));
+        Assert.assertEquals(0, arrayMethods.positiveNegative(positiveNegative2));
+        Assert.assertEquals(3, arrayMethods.positiveNegative(positiveNegative3));
+
+        int [] sort1 = {1,5,100,100,1001};
+        int [] sort2 = {4,9,1,12,56};
+        Assert.assertTrue(arrayMethods.sort(sort1));
+        Assert.assertFalse(arrayMethods.sort(sort2));
+
+        int[] arrEvenNumber = {6, 12, 5, 65, 14, 100};
+        int[] expectedEvenNumber = {6, 12, 14, 100};
+        Assert.assertArrayEquals(expectedEvenNumber, arrayMethods.evenNumber(arrEvenNumber));
+
+        int[] arrAssertEquals1 = {76, 12, 4, 32, 11, 10, 56};
+        Assert.assertEquals("", 3, arrayMethods.numbersZ(arrAssertEquals1, 15));
+        Assert.assertEquals("", 0, arrayMethods.numbersZ(arrAssertEquals1, 150));
+
+        int [] arrFindNumber1 = {2, 0, -7, -12, -9, 0, 78, 14, 76, 0};
+        int [] expectedArrFindNumber1 = {4, 3, 3};
+        Assert.assertArrayEquals(expectedArrFindNumber1, arrayMethods.findNumber(arrFindNumber1));
+
+        int [] replacement1 = {-8, 12, 16, 23, 98};
+        int [] expectedReplacement1 = {98, 12, 16, 23, -8};
+        Assert.assertArrayEquals(expectedReplacement1, arrayMethods.replacement(replacement1));
+
+        int [] ArrMinI = {-3, 12, 1, 3, -5, 78, 5};
+        int [] expectedArrMinI = {-3, 1, 3, -5, 5};
+        Assert.assertArrayEquals(expectedArrMinI, arrayMethods.minI(ArrMinI));
+
+
 
 
 

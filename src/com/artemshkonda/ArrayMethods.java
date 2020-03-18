@@ -113,13 +113,6 @@ public class ArrayMethods {
      */
     public int positiveNegative(int[] arr) {
         try {
-            if (arr[0] > 0) {
-                System.out.println("Первое число в массиве является положительным");
-            } else if (arr[0] < 0) {
-                System.out.println("Первое число в массиве является отрицательным");
-            } else {
-                System.out.println("Первое чсилов в массиве равно нулю");
-            }
             log.info("Определение успешно завершено: " + arr[0]);
         }
         catch (Exception ex){
@@ -189,7 +182,6 @@ public class ArrayMethods {
             ex.printStackTrace();
             System.out.println("Ошибка при создании нового массива кратных чисел");
         }
-        System.out.println(Arrays.toString(newArr));
         return newArr;
     }
 
