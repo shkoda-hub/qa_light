@@ -411,7 +411,7 @@ public class ArrayMethods {
                 arr[i] = arr[i + 1];
                 arr[i + 1] = temp;
             }
-            log.info("Замена соседних элементов (а[0] и а[1], а[2] и а[3], …) была завершена");
+            log.info("Замена соседних элементов была завершена: "+Arrays.toString(arr));
         }
         catch (Exception ex){
             ex.printStackTrace();
@@ -427,25 +427,32 @@ public class ArrayMethods {
      * @param arr
      */
     public int[] oneZero(int[] arr) {
-        int idx = 0;
+        int i = 0;
+        int count = 0;
         try {
-            while (idx<arr.length && arr[idx] != 0) {
-                idx++;
+            while (i<arr.length && arr[i] != 0) {
+                i++;
+                count++;
             }
-            log.info("Числа массива до нуля были выведенны");
+            log.info("Подсчет размера нового массива был выполнен");
         }
         catch (Exception ex){
             ex.printStackTrace();
-            log.error("Ошибка при выводе на печать чисел массива до нуля");
+            log.error("Ошибка при подсчете размера нового массива");
         }
-        int[] newArr = new int[idx];
+        int[] newArr = new int[count];
         int j = 0;
-        while (idx<arr.length && arr[idx] != 0){
-            newArr[j]=arr[idx];
-            j++;
-            idx++;
+        try {
+            while (i<arr.length && arr[i] != 0){
+                newArr[j] = arr[i];
+                j++;
+            }
+            log.info("Новый массив был создан: "+Arrays.toString(newArr));
         }
-        System.out.println(Arrays.toString(newArr));
+        catch (Exception ex){
+            ex.printStackTrace();
+            log.error("");
+        }
         return newArr;
     }
 

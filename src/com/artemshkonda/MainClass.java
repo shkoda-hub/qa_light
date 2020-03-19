@@ -110,9 +110,26 @@ public class MainClass {
         int [] expectedReplacement1 = {98, 12, 16, 23, -8};
         Assert.assertArrayEquals(expectedReplacement1, arrayMethods.replacement(replacement1));
 
-        int [] ArrMinI = {-3, 12, 1, 3, -5, 78, 5};
+        int [] arrMinI = {-3, 12, 1, 3, -5, 78, 5};
         int [] expectedArrMinI = {-3, 1, 3, -5, 5};
-        Assert.assertArrayEquals(expectedArrMinI, arrayMethods.minI(ArrMinI));
+        Assert.assertArrayEquals(expectedArrMinI, arrayMethods.minI(arrMinI));
+
+        int [] arrRest = {15, 67, -2, 0, 98, 14, 24};
+        int [] expectedArrRest = {15,24};
+        Assert.assertArrayEquals(expectedArrRest, arrayMethods.rest(arrRest,9,6));
+
+        int [] arrReplaceElement = {9, -1, 9, 12, 78, 98, 67};
+        int [] expectedArrReplaceElement = {-1, 9, 12, 9, 98, 78, 67};
+        Assert.assertArrayEquals(expectedArrReplaceElement, arrayMethods.replaceElements(arrReplaceElement));
+
+        int [] arrOneZero = {1, 2, 7, -9, 0, 7, 0, 2};
+        int [] expectedArrOneZero = {1, 2, 7, -9};
+        //Assert.assertArrayEquals(expectedArrOneZero, arrayMethods.oneZero(arrOneZero));
+        arrayMethods.oneZero(arrOneZero);
+
+
+
+
 
 
 
