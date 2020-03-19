@@ -1,6 +1,7 @@
 package com.artemshkonda;
 
 import org.junit.Assert;
+import org.junit.ClassRule;
 
 import java.util.Arrays;
 
@@ -125,8 +126,30 @@ public class MainClass {
         int [] arrOneZero = {1, 2, 7, -9, 0, 7, 0, 2};
         int [] expectedArrOneZero = {1, 2, 7, -9};
         //Assert.assertArrayEquals(expectedArrOneZero, arrayMethods.oneZero(arrOneZero));
-        arrayMethods.oneZero(arrOneZero);
 
+
+        int[] arrMaxPlusMin = {4, 3, 9, -2, 15, 98, 43};
+        Assert.assertEquals("", 41, arrayMethods.maxPlusMin(arrMaxPlusMin));
+
+        int [] arrMoreM = {4, 12, 45, 4, -2, 0, 16};
+        Assert.assertEquals("", 8640, arrayMethods.moreM(arrMoreM, 10 ));
+
+        int [] arrModuleArr = {-70, 12, -100, 56, 6, 21, 56, -66};
+        int [] expectedArrModuleArr = {0, 12, 0, 56, 6, 21, 56, 0};
+        Assert.assertArrayEquals(expectedArrModuleArr, arrayMethods.moduleArr(arrModuleArr));
+
+        int [] arrCompare = {-4, 4, 12, 5, -9, -3, 0, 14, -16};
+        Assert.assertEquals("", 3360, arrayMethods.compare(arrCompare));
+
+        int [] arrChange = {1, 14, 3, -2, 0, 14, 2};
+        int [] expectedArrChange = {1, 0, 3, -2, 0, 14, 2};
+        Assert.assertArrayEquals(expectedArrChange, arrayMethods.change(arrChange));
+
+        int [] arrNumbersK = {13, -2, 563, 43, 53, 1, -2, 0, 93};
+        int [] expectedArrNumbersK = {13, 563, 43, 53, 93};
+        Assert.assertArrayEquals(expectedArrNumbersK, arrayMethods.numbersK(arrNumbersK, 3));
+
+        arrayMethods.oneZero(arrOneZero);
 
 
 

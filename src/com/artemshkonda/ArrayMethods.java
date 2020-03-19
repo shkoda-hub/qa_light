@@ -427,11 +427,11 @@ public class ArrayMethods {
      * @param arr
      */
     public int[] oneZero(int[] arr) {
-        int i = 0;
+        int idx = 0;
         int count = 0;
         try {
-            while (i<arr.length && arr[i] != 0) {
-                i++;
+            while (idx<arr.length && arr[idx] != 0) {
+                idx++;
                 count++;
             }
             log.info("Подсчет размера нового массива был выполнен");
@@ -443,9 +443,10 @@ public class ArrayMethods {
         int[] newArr = new int[count];
         int j = 0;
         try {
-            while (i<arr.length && arr[i] != 0){
-                newArr[j] = arr[i];
+            while (idx<arr.length && arr[idx] != 0){
+                newArr[j] = arr [idx];
                 j++;
+                idx++;
             }
             log.info("Новый массив был создан: "+Arrays.toString(newArr));
         }
@@ -494,17 +495,17 @@ public class ArrayMethods {
      */
     public int moreM(int[] arr, int m) {
         int num = 1;
-        boolean isPresent = false;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > m) {
-                num = arr[i] * num;
-                isPresent = true;
+        try{
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > m) {
+                    num = arr[i] * num;
+                }
             }
+            log.info("Нахождение произведения чисел которые больше М прошло успешно: "+num);
         }
-        if (isPresent) {
-            System.out.println(num);
-        } else {
-            System.out.println("В массиве нет значений, которые больше " + m);
+        catch (Exception ex){
+            ex.printStackTrace();
+            log.error("Ошибка при нахождении произведения чисел которые больше М");
         }
         return num;
     }
@@ -541,6 +542,7 @@ public class ArrayMethods {
     public int compare(int[] arr) {
         int p1 = 1;
         int p2 = 1;
+        int res = 1;
         try {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] < 0) {
@@ -550,17 +552,25 @@ public class ArrayMethods {
                 }
             }
             if (Math.abs(p1) > Math.abs(p2)) {
+                res = Math.abs(p1);
                 System.out.println("Значение p1 больше чем p2 и равно " + Math.abs(p1));
-            } else {
+            }
+            else if(Math.abs(p1) < Math.abs(p2)) {
+                res = Math.abs(p2);
                 System.out.println("Значение p2 больше чем p1 и равно " + Math.abs(p2));
             }
+            else {
+                res = Math.abs(p1);
+                System.out.println("Значения р1 и р2 по модулю равны между собой");
+            }
+
             log.info("Сравнение модуля P1 с модулем P2 прошло успешно");
         }
         catch (Exception ex){
             ex.printStackTrace();
             log.error("Ошибка при сравнении модуля P1 с модулем P2");
         }
-        return -1;
+        return res;
     }
 
     /**
