@@ -434,6 +434,8 @@ public class ArrayMethods {
                 idx++;
                 count++;
             }
+            count++;
+
             log.info("Подсчет размера нового массива был выполнен");
         }
         catch (Exception ex){
@@ -442,12 +444,14 @@ public class ArrayMethods {
         }
         int[] newArr = new int[count];
         int j = 0;
+        idx = 0;
         try {
             while (idx<arr.length && arr[idx] != 0){
                 newArr[j] = arr [idx];
                 j++;
                 idx++;
             }
+
             log.info("Новый массив был создан: "+Arrays.toString(newArr));
         }
         catch (Exception ex){
